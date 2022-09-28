@@ -8,18 +8,19 @@
 - INSTALLATION AND CONFIGURURATION OF JENKINS SERVER
 A new ec2 server of Ubuntu 20.02 verison was spinned up, made it TCP port 8080(Inbound security rule), and after a successful connection and update, I ran the following commands-`sudo apt install default-jdk-headless`, `wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key` | `sudo apt-key add -`
 `sudo sh -c echo deb https://pkg.jenkins.io/debian-stable binary/ > \ /etc/apt/sources.list.d/jenkins.list`
-`sudo apt update` `sudo apt-get install jenkins`   To confirm the status of jenkins, `sudo systemctl status jenkins` and it was active and running- check the image below: ![Jenkins status]()
+`sudo apt update` `sudo apt-get install jenkins`   To confirm the status of jenkins, `sudo systemctl status jenkins` and it was active and running- check the image below: ![Jenkins status](https://github.com/Lordchancellorr/project-9/blob/main/Images/Jenkins%20Status.PNG)
 i accesed the paage with jenkins server IP address, retrieved the password with `sudo cat /var/lib/jenkins/secrets/initialAdminPassword`  as instructed in the documentation and the images below were the output after a successful login.
-- ![Jenkins Login Page]()
-- [Jenkins Installation]()
-- ![Jenkins Dashboard]()
+- [Jenkins Homepage](https://github.com/Lordchancellorr/project-9/blob/main/Images/Jemkins%20Homepage.PNG)
+- ![Jenkins Login Page](https://github.com/Lordchancellorr/project-9/blob/main/Images/Jenkins%20login%20page.PNG)
+- [Jenkins Installation](https://github.com/Lordchancellorr/project-9/blob/main/Images/Jenkins%20Installation.PNG)
+- ![Jenkins Dashboard](https://github.com/Lordchancellorr/project-9/blob/main/Images/Jenkins%20Dashboard.PNG)
 -After all these, i moved to the configuration in other to retreive source codes from GitHub using Webhooks, i forked the tooling repo directly from darey.io Github account to my own repositories. I opened the already installed jenkins, created a new console, followed all the instructions in the documentation. The images below are proof of successful configuration.
 
-![Confirmation of push request]()
+![Confirmation of push request](https://github.com/Lordchancellorr/project-9/blob/main/Images/Confirmation%20of%20push%20request.PNG)
 
-![Artifacts]()
+![Artifacts](https://github.com/Lordchancellorr/project-9/blob/main/Images/Artifacts.PNG)
 
-![Confirmation of Artifacts]()
+![Confirmation of Artifacts on the Terminal](https://github.com/Lordchancellorr/project-9/blob/main/Images/Confirmation%20of%20artifacts%20on%20the%20terminal.PNG)
 
 I was able to configure an automated Jenkins job that receives files from GitHub by webhook trigger (this method is considered as ‘push’ because the changes are being ‘pushed’ and files transfer is initiated by GitHub.
 
@@ -34,12 +35,12 @@ Hostname was the  private IP address of your NFS server
 Username was ec2-user (since NFS server is based on EC2 with RHEL 8)
 Remote directory – /mnt/apps since our Web Servers used it as a mointing point to retrieve files from the NFS server
 After following the documentation to the latter, the images below were the outputs.
-![Successful Configuration]() ------(First attempt)
+![Successful Configuration](https://github.com/Lordchancellorr/project-9/blob/main/Images/Successful%20configuration%20of%20Jenkins.PNG) ------(First attempt)
 ![Successful Configuration](second attempt)
 
 to confirm the workabilty and reliace on the configuration and connection built for jenkins on github and NFS and the image below was the output on the terminal after i ran `cat /mnt/apps/README.md`
 
-![Jenkins Configuration]()
+![Jenkins Configuration](https://github.com/Lordchancellorr/project-9/blob/main/Images/Successful%20configuration%20of%20Jenkins.PNG)
 
 This brings us to the end of Project 9
 Thank you!
